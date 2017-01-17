@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/1999/xhtml">
+       <html>
+         <head>
+           <title>信息顾问</title>
+           <meta charset="utf-8">
+           <meta name="viewport" content="width,initial-scale=1.0">
+           <link rel="icon"  href="/images/hz_tittle.png" />
+           <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+		   <link rel='stylesheet' href='/stylesheets/style.css' /> 
+		   <link rel='stylesheet' href='/stylesheets/bootstrap-responsive.css' />
+		   <script src="/javascripts/jquery.cookie.js"></script>
+		   
+		   <script>
+			//设置cookie
+			function setCookie (name, value, iDay) {
+			    var oDate=new Date();
+			    oDate.setDate(oDate.getDate()+iDay);//设置cookie过期时间
+			    document.cookie = name + '=' + value + ';expires=' + oDate;//设置cookie[name=value;expires=oDate]
+			}
+			
+			//获取cookie
+			function getCookie (name) {
+			    //'username=abc; password=123456; aaa=123; bbb=4r4er'
+			    var arr=document.cookie.split('; '); //使用;和空格 分割包含cookie，得到包含cookie name和value的数组
+			    var i=0;
+			
+			    //arr->['username=abc', 'password=123456', ...]
+			    for(i=0;i<arr.length;i++) {
+			        //arr2->['username', 'abc']
+			        var arr2=arr[i].split('='); //使用"="分割包含cookie name和value的数组
+			
+			        if(arr2[0]==name) {
+			            return arr2[1]; //根据cookie的name来获取value;
+			        }
+			    }
+			    return ''; //若没有该name的cookie，则返回为空
+			}
+			
+			//删除cookie
+			function removeCookie (name) {
+			    setCookie(name, '1', -1);//调用setCookie()函数,设置为-1天过期，即昨天过期，计算机自动删除过期cookie
+			}
+			
+        	window.onload = function () {
+	            var oForm = document.getElementById('form');
+	            var oUser = document.getElementsByName('user')[0];
+	            var opassword = document.getElementsByName('password')[0];
+	            var oBtnClear = document.getElementsByTagName('a')[0];
+
+	            oForm.submit = function () {
+	                <!--setCookie('user', oUser.value, 30);-->
+	                removeCookie('user');
+	                removeCookie('password');
+	                oUser.value='';
+	            };
+
+            	oUser.value = getCookie('user');
+
+	            oBtnClear.onclick = function () {
+	                removeCookie('user');
+	                oUser.value='';
+	            };
+        	};
+        	
+        	function del_cookie(name) {
+    			document.cookie = name +
+    			'=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
+    		}
+    		
+    	   </script>
+ 
+		   
+           <style type='text/css'>
+               body{
+                   padding-top:60px;
+                   padding-bottom:40px
+               }
+           </style>
+
+           <!--[if lt IE 9]> 
+			 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		   <![endif]-->
+         </head>
+           
+
+         <body onload="del_cookie( )">   
+            <div class="navbar navbar-fixed-top container-fluid">
+                <div class="navbar-inner">
+                  <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="/">信息顾问</a>
+                    <div class="nav-collapse">
+                        <ul class="nav">
+                            <li class="active"><a href="/">首页</a></li>
+                            <% if(!user){%>
+                            <li><a href="/login">登录</a></li>
+                            <li><a href="/reg">注册</a></li>
+                             
+                            <% } else {%>
+                                <li style="font-weight:bold"><a href="/">用户：<font color="#0000FF"><small><%=user.name%></small></font></a></li>
+                                <li style="font-weight:bold"><a href="/logout">退出</a></li>
+                                <li style="font-weight:bold"><a href="/upload">上传文件</a></li>
+                            <% } %>
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+            </div>
+             <%- message %>   <!--嵌入message-->
+            <div id="container-fluid" class="container-fluid">
+                <%- body %>   <!--嵌入body-->
+                
+
+			                    
+               <!-- <hr />  <!--水平尺Horizontal Rule-->  
+            </div>
+         </body>
+         
+
+         
+         <script src="/javascripts/jquery.js"></script>
+         <script src="/javascripts/bootstrap.js"></script>
+         <script src="/javascripts/jquery.validate.js"></script>
+         <script src="/javascripts/jquery.ui.js"></script>
+         <script src="/javascripts/jquery.cookie.js"></script>
+	     <script src="/javascripts/mail_autocomplete.js"></script>
+
+       </html>

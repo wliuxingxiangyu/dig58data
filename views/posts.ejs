@@ -1,0 +1,21 @@
+<% posts.forEach(function(post,index){
+    if(index % 2==0){ %>   <!--微博一行展示3列，总数是3的倍数,输出一个的大的div class="row" -->
+        <div class="row">
+    <%}%>
+        
+    <div class="span6">
+        <h2><a href="/u/<%=post.user%>"><%=post.user %></a>评论</h2>
+		       <!--跳转到用户主页-->
+        <p><%=post.post%></p>   <!--发表内容-->
+        <p>--<font color="#001FFF"><small><%=post.time%></small></font></p>
+    </div>
+	
+     <% if(index % 2 == 1){%>   <!--012，index 对3求余表示最后一列-->
+        </div> <!--结束行-->
+     <%}%>
+<%})%>
+
+
+    <% if (posts.length % 2 !=0){ %>
+      </div>  <!--结束行-->
+    <%}%>  

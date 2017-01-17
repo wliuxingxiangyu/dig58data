@@ -1,0 +1,77 @@
+<% if(!user){%>
+<div class="hero-unit">
+    <p>信息顾问专家，欢迎您！请输入你想咨询的问题。</p>
+    
+    <input type="text" id="box" class="search-query span8" onkeydown=KeyDown()/>
+	    <script>
+		function KeyDown(){//按enter键无效
+		  if (event.keyCode == 13){
+		  alert("enter");
+		    search();
+		  }
+		}
+		</script>
+
+    <input type="button" value="查询" onclick="search()"/>
+		<script>
+			function search() {
+			    var search_value = document.getElementById('box').value;
+			    var url = 'other';
+			    switch(search_value) {
+			        case '房价':
+			            url = 'housePrice';
+			            break;
+			        case '猪肉价':
+			            url = 'livePigPriceTrend';
+			            break;
+			        case 'ccc':
+			            url = '0003';
+			            break;
+			    }
+			    location = url;
+			}
+		</script>
+    
+   
+
+   
+   <!-- 
+   <p>
+   
+        <a class="btn btn-parimary btn-large" href="/login">登录</a>
+        <a class="btn btn-large" href="/reg">立即注册</a>
+        <a class="btn btn-parimary btn-large" href="/loveAnimation">loveAnimation</a>
+   </p>
+   -->
+   
+</div>
+<% }else{ %>
+<%-partial('say')%>
+<%}%>
+<%-partial('posts')%>
+
+<div class="pagination" style="text-align:center"><!--pagination：分页-->
+	<ul>
+		<li class="active"><a href="/">1</a></li>
+		<li ><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+	</ul>
+</div>
+
+<div id="share">                                                               
+	<ul>                                                                         
+		<li><a class="a">一键分享</a></li>                              
+		<li><a href="http://weibo.com/guide/welcome" class="b">新浪微博</a></li>                              
+		<li><a href="http://www.renren.com/" class="c">人人网</a></li>                                                                                      
+		<li><a href="http://www.douban.com/" class="d">豆瓣网</a></li>                                                           
+		<li><a href="http://blog.csdn.net/" class="e">CSDN博客</a></li>                              
+		<li><a href="http://user.qzone.qq.com/" class="f">QQ 空间</a></li>                                                            
+		<li><a href="http://blog.qq.com/" class="g">腾讯微博</a></li>                              
+		<li><a href="http://www.kaixin001.com/" class="h">开心网</a></li>                                
+		<li><a href="http://tieba.baidu.com/" class="i">百度贴吧</a></li>    	
+	</ul>                                                                        
+</div> 
+				
+<footer>
+    <p><a href="http://58.com/" target="_blank">58同城</a></p>
+</footer>				   

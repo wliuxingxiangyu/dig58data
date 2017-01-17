@@ -1,0 +1,7 @@
+INDEX VERSION 1.3+F:\files_of_softwares\eclipse123\dig58data\dig58data\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+350995684.index
+2443299950.index
+995860511.index
+184465250.index
+248770645.index
+2245376083.index

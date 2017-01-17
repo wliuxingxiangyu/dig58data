@@ -1,0 +1,86 @@
+<form class="form-horizontal" method="post">
+<fieldset>
+    <legend>用户注册</legend>
+    <div class="control-group">
+        <label class="control-label" for="username">用户名</label>
+        <div class="controls">
+          <input type="text" class="input-xlarge" placeholder="用户名非空" id="username" name="username">
+          <span class="star">*</span> 
+        </div>
+    </div> 
+        
+
+    <div class="control-group">
+        <label class="control-label" for="password">设置密码</label>
+        <div class="controls">
+          <input type="text" class="input-xlarge" placeholder="密码不少于6位" id="password" name="password"> 
+          <span class="star">*</span> 
+        </div>
+    </div>   
+        
+
+    <div class="control-group">
+         <label class="control-label" for="password-repeat">确认密码</label>
+         <div class="controls">
+             <input type="text" class="input-xlarge" id="password-repeat" name="password-repeat">
+             <span class="star">*</span> 
+         </div>
+    </div>
+    
+    <div class="control-group">
+    <table > 
+	  	<tr>
+	  		 <div class="controls">
+	 			<td> <label class="control-label">性别&nbsp;&nbsp;&nbsp;&nbsp;</label> </td>
+				<td>  <label class="radio"><input  type="radio" name="gender" value="male">男</label></td>
+	    			<!-- radio单选按钮                         name按钮组名  选该按钮相当于输入value值-->
+				<td>  <label class="radio"><input type="radio" name="gender" value="female">女</label></td>
+	     	 </div>
+   	    </tr>
+     </table>
+    </div>
+         
+
+    <div class="control-group">
+        <label class="control-label" for="mail">邮箱</label>
+        <div class="controls">
+           <input type="text" class="input-xlarge ui-menu-item" id="mail" name="mail" placeholder="常用邮箱，用于重要信息通知" >
+        </div>   
+    </div> 
+    
+    <div class="control-group">
+	    <label class="control-label" for="userCity" >目前所在省市</label>
+		<div class="controls">
+			<select  id="userCity" style="width:285px;">
+			               <option value="beijing">北京</option>
+			               <option value="jiangsu ">江苏</option>
+						   <option value="jiangsu ">江西</option>
+			               <option value="shanxi">陕西</option>
+			               <option value="other">其他</option>
+		    </select>
+	    </div> 
+    </div> 
+     
+    <div class="control-group">
+		<label class="control-label">选择你感兴趣的话题&nbsp;&nbsp;</label>
+		<label class="checkbox inline control"><input  type="checkbox" name="topic" value="computer">电脑网络</label>
+		<label class="checkbox  inline control"><input  type="checkbox" name="topic" value="sport">体育运动</label>
+		<label class="checkbox  inline control"><input  type="checkbox" name="topic" value="recreation">娱乐休闲</label>
+		<label class="checkbox  inline control"><input  type="checkbox" name="topic" value="health">医疗健康</label>
+		<label class="checkbox  inline control"><input  type="checkbox" name="topic" value="art">文化艺术</label>
+		<label class="checkbox  inline control"><input  type="checkbox" name="topic" value="business">商业理财</label>
+		<label class="checkbox  inline control"><input  type="checkbox" name="topic" value="other">其他</label>   
+    </div> 
+    
+     
+    <!--<div class="control-group">
+        <input class="control-label" id="fulAvatar" name="fulAvatar" type="file" class="form-control" />     
+        <button class="control" id="btnSub" class="btn btn-lg btn-primary" type="submit">上 传照片</button> 
+    </div>  -->
+        
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">注册</button>
+    </div>
+</fieldset>
+</form>

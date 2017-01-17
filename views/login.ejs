@@ -1,0 +1,39 @@
+<form class="form-horizontal" method="post">
+<fieldset> <!--fieldset 元素可将表单内的相关元素分组。元素间可能有特殊的边界-->
+    <legend>用户登录</legend>   <!--legend 元素为 fieldset 元素定义“form表头”标题-->
+    <div class="control-group">
+        <label class="control-label" for="username">用户名</label>  <!--label标签为 input 元素定义标注，for对应id-->
+        <div class="controls">
+            <input type="text" class="input-xlarge" id="username" name="username">
+            <!--<p class="help-block">你的账户名称，用户登录和提示</p>-->
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="password">密码</label>
+        <div class="controls">
+            <input type="text" class="input-xlarge" id="password" name="password">
+        </div>
+    </div>
+    
+	<div class="control-group" >
+        <label  class="control-label" for="validateCode">校验码</label>
+        <div class="controls">
+        	<input type="text" placeholder="验证码" value="" class="input-xlarge" id="validateCode" >
+            <img class="ui-checkcode-img" id="J-checkcode-img" src="https://omeo.alipay.com/service/checkcode?sessionID=9a10189bcde3b0f13edf893433a03db1&amp;t=0.5578310354190305" title="点击图片刷新验证码" alt="点击图片刷新验证码" seed="authcenter-img-checkcode">
+        </div>
+    </div>
+        
+        
+            
+              
+
+                  
+                   
+
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary">登录</button>
+    </div>
+
+</fieldset>
+</form>

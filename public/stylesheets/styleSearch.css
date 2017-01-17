@@ -1,0 +1,33 @@
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	margin:40px;
+}
+img {
+	border:none;
+}
+ul {
+	margin:0 auto;
+	width:480px;
+	height:360px;
+	list-style-type:none;
+	background:#333;
+	overflow:hidden;
+}
+li {
+	width:480px;
+	height:360px;
+}
+li img {
+	padding:40px 0 0 40px;
+	
+}
+p {
+	text-align:center;
+	padding-top:10px;
+}
+p img {
+	border:1px solid black;
+}
